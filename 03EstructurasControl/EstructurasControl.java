@@ -21,6 +21,7 @@ elegir alguna de las 14 opciones siguientes.
 //se debe de estructurar el tipo de dato acorde a su entrada
 //si es entero obtenerlo como entero, si es char como caracter
 import java.util.Scanner;
+import java.lang.Math;
 
 class EstructurasControl {
     //si declaramos fueradel metodo las variables son globales es decir para todo el programa
@@ -40,12 +41,13 @@ class EstructurasControl {
         //las variables son de tipo globales y locales
         //si declaro dentro de un metodo es local
 
-        int opcion, numbinario, total, cantidaddelproducto, num;
+        int opcion, opc , numbinario, total, cantidaddelproducto, num,n1=0,n2=0,n3=0,n4=0, edad;
         float precio, resultado = 0, compra = 0;
         String nombreproducto;
         String binario = "";
         char letra;
-        double num1 = 0.00, num2 = 0.00, suma = 0.00, multi = 1.00, Division = 0.00 ;
+        double lado, altura, base, area, perimetro, radio, volumen, ab;
+        double Fahrenheit, Celsius, Kelvin, Rankine, num1 = 0.00, num2 = 0.00, suma = 0.00, multi = 1.00, Division = 0.00, total1 = 0.00, descuento = 0.00 ;
         char operacion;
 
         do{
@@ -72,6 +74,38 @@ class EstructurasControl {
             //menu
             switch(opcion){
                 case 1:
+                System.out.println("Ingrese el total de su compra:");
+                compra = entrada.nextFloat();
+                System.out.println("El Total de su Compra es: " + compra);
+                System.out.println("Se aplicara un descuento si es Mayor de Edad o Socio");
+                System.out.println("Por favor ingrese la Edad: ");
+                edad = entrada.nextInt();
+                if( edad < 21 ){
+                    System.out.println("Los Padres del Cliente son Socios ?");
+                    System.out.println("(1) Si");
+                    System.out.println("(2) No");
+                        opc = entrada.nextInt();
+                        switch(opc){
+                            case 1:
+                            System.out.println("Se le Aplica el Descuento del 45%");
+                            descuento = compra * 0.45;
+                            total1 = compra - descuento;
+                               break;   
+                            case 2:
+                            System.out.println("Los Padres del Cliente no son Socios");
+                            System.out.println("Por lo cual solo se Aplicara el Descuento del 25%");
+                            descuento = compra * 0.25;
+                            total1 = compra - descuento; 
+                                break;   
+                        }
+                } else if(edad > 65){
+                            System.out.println("Al Cliente por ser mayor de edad se le aplicara un descuento del 40%");
+                            descuento = (compra * 0.40);
+                            total1 = compra - descuento;   
+                        }  
+                    System.out.println("Su descuento es: " + descuento + " El total con descuento es de: " + total1);
+                    System.out.println("Gracias por su compra");
+                            
                     break;
                 case 2:
                     //decimal a binario
@@ -96,8 +130,59 @@ class EstructurasControl {
                     System.out.println("El numero binario es: " + binario); 
                     break;
                 case 3:
+                    System.out.print("Ingrese la temperatura en grados Fahrenheit: ");
+                    Fahrenheit = entrada.nextInt();
+                    System.out.println("Elija la conversión deseada:");
+                    System.out.println("1. Fahrenheit a Celsius");
+                    System.out.println("2. Fahrenheit a Kelvin");
+                    System.out.println("3. Fahrenheit a Rankine");
+                    opc = entrada.nextInt();
+
+                    switch (opc) {
+                        case 1:
+                            Celsius = (Fahrenheit - 32) * 5 / 9;
+                            System.out.println("La temperatura en grados Celsius es: " + Celsius);
+                            break;
+                        case 2:
+                            Kelvin = ((Fahrenheit - 32) * 5 / 9 + 273.15);
+                            System.out.println("La temperatura en Kelvin es: " + Kelvin);
+                            break;
+                         case 3:
+                            Rankine = Fahrenheit + 459.67;
+                            System.out.println("La temperatura en Rankine es: " + Rankine);
+                            break;
+                        default:
+                        System.out.println("Opción no válida.");
+                            break;                          
+                     }
+                    System.out.println("Gracias por elegir este programa");
                     break;
                 case 4:
+                    System.out.println("Digite la Cantidad de Numeros que va a Ingresar");
+                     num = entrada.nextInt();
+                    if(num > 0){
+                    for(int i = 1; i <= num; i++){
+                     System.out.println(" Ingrese los Numeros a Leer");
+                        n1 = entrada.nextInt();
+                        if(n1 > 0){
+                         
+                         System.out.print(" Positivo "+n1);
+                
+                        }else if(n1 < 0){
+                        
+                        System.out.print(" Negativo "+n1);
+                
+                        }else if(n1 ==0){
+                        
+                        System.out.print(" Neutro "+n1);
+                     }
+
+                    }
+
+               }else if(num <= 0){
+               System.out.println("La Cantidad Ingresada es Incorrecta");
+               System.out.println("Vuelva a Ingresar UNA Cantidad Correcta");
+               }
                     break;
                 case 5:
                     System.out.println("Bienvenido a la tienda");
@@ -120,6 +205,51 @@ class EstructurasControl {
                     compra = 0;
                     break;
                 case 6:
+                    System.out.println("Bienvenido al programa de calculos de areas y perimetros");
+                    System.out.println("Elija una opcion deseada: ");
+                    System.out.println("1.Rectangulo");
+                    System.out.println("2.Triangulo");
+                    System.out.println("3.Volumen de una esfera");
+                    System.out.println("4.Volumen de un cilindro");
+
+                    opc = entrada.nextInt();
+                    switch(opc){
+                        case 1 :
+                            System.out.println("Ingresa la base del rectangulo");
+                            base = entrada.nextDouble();
+                            System.out.println("Ingresa la altura del rectangulo");
+                            altura = entrada.nextDouble();
+                                perimetro = ( base *2 )+( altura * 2 ) ;
+                                area = base * altura;
+                                System.out.println(" El perimetro es de: " + perimetro + " El area es de: " + area);
+                            break;
+                        case 2 :
+                            System.out.println("Ingresa el lado del triangulo equilatero");
+                            lado = entrada.nextDouble();
+                            System.out.println("Ingresa la altura del triangulo equilatero");
+                            altura = entrada.nextDouble();
+                                perimetro = lado*3;
+                                area = (lado * altura) /2;
+                                System.out.println(" El perimetro es de: " + perimetro + " El area es de: " + area);
+                            break;
+                        case 3 :
+                                System.out.println("Ingresa el radio de una esfera");
+                                radio = entrada.nextDouble();
+                                volumen = (4/3)*3.1416*(radio*radio*radio);
+                                System.out.println(" El volumen de la esfera es " + volumen);
+                            break;
+                        case 4 :
+                                System.out.println("Ingresa el radio del cilindro");
+                                radio = entrada.nextDouble();
+                                System.out.println("Ingresa la altura");
+                                altura = entrada.nextDouble();
+                                ab = 3.1416*(radio*radio);
+                                volumen = ab*altura;
+                                System.out.println(" El volumen del cilindro es: " + volumen);
+                            break;
+                    }
+                            System.out.println("Gracias por elegir este programa");
+                           
                     break;
                 case 7:
                     //vamos a imprimir una tabla
