@@ -41,7 +41,7 @@ class EstructurasControl {
         //las variables son de tipo globales y locales
         //si declaro dentro de un metodo es local
 
-        int opcion, opc , numbinario, total, cantidaddelproducto, num,n1=0,n2=0,n3=0,n4=0, edad ;
+        int opcion, opc , numbinario, total, figura, cantidaddelproducto, num,n1=0,n2=0,n3=0,n4=0, n9,o, edad ;
         long factorial = 1;
         float precio, resultado = 0, compra = 0;
         String nombreproducto;
@@ -288,10 +288,55 @@ class EstructurasControl {
                     }
                     break;
                 case 10:
+                System.out.println("Ingrese el tamaño de la figura hueca:");
+                figura =entrada.nextInt();
+
+                if( figura>= 0 && figura<= 50);
+                      for(int f=0; f<figura; f++){
+                       System.out.print("*");
+
+                      }
+                      System.out.println();
+
+                      for(int f =0; f<figura-2; f++){
+                       System.out.print("*");
+                       for(int g=0; g<figura-2; g++){
+                         System.out.print (" ");
+                       }
+                       System.out.println("*");
+                      }
+
+                       for(int f=0; f<figura; f++){
+                       System.out.print("*");
+                       }
                     break;
                 case 11:
+
                     break;
                 case 12:
+                System.out.println("Diamante :)");
+                final int n = 5;
+
+                 for ( o = 1; o <= n; o++)
+                  {
+                 for (int j = o; j < n; j++) {
+                  System.out.print(' ');
+                 }
+                 for (int k = 1; k < 2*o; k++) {
+                  System.out.print('*');
+                    }
+                  System.out.print(System.lineSeparator());
+                 }
+                 for ( o = n - 1; o >= 1; o--)
+                 {
+                 for (int j = n; j > o; j--) {
+                   System.out.print(' ');
+                 }
+                 for (int k = 1; k < (o * 2); k++) {
+                  System.out.print('*');
+                 }
+                  System.out.print(System.lineSeparator());
+                 }
                     break;
                 case 13:                   
                     System.out.println("Selecciona la operacion que deseas realizar: ");
