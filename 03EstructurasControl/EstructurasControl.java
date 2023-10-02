@@ -41,7 +41,8 @@ class EstructurasControl {
         //las variables son de tipo globales y locales
         //si declaro dentro de un metodo es local
 
-        int opcion, opc , numbinario, total, cantidaddelproducto, num,n1=0,n2=0,n3=0,n4=0, edad;
+        int opcion, opc , numbinario, total, cantidaddelproducto, num,n1=0,n2=0,n3=0,n4=0, edad ;
+        long factorial = 1;
         float precio, resultado = 0, compra = 0;
         String nombreproducto;
         String binario = "";
@@ -259,6 +260,13 @@ class EstructurasControl {
                     }
                     break;
                 case 8:
+                    System.out.println("Bienvenido al programa para un factorial");
+                    System.out.println("Introduzca el numero para el factorial");
+                    num = entrada.nextInt();
+                    for (int i = 1; i<= num; i++){
+                    factorial *= i;
+                    }
+                    System.out.println("El factorial de " + num + " es: " + factorial);
                     break;
                 case 9:
                     System.out.println("Cuadrado magico");
@@ -333,6 +341,7 @@ class EstructurasControl {
                     }
                     break;
                 case 14:
+                    System.out.println("Gracias por usar este programa");
                     break;
                 default:
                     System.out.println("Elija una opcion valida");
