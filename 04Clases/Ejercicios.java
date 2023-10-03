@@ -8,10 +8,11 @@ class Ejercicios{
     Scanner entrada = new Scanner(System.in);
 
     //variables Globales
-    char op;
+    char op,letra;
 
     //menu
     public void menu(){
+        do{
         System.out.println("ejercicios que ahi le quedan de tarea");
         System.out.println("a. Calculadora");
         System.out.println("b. Convercion de unidades");
@@ -39,7 +40,10 @@ class Ejercicios{
              System.out.println("Gracias por jugar ");
 
         }
-        
+        System.out.println("Deseas repetir el programa digital S");
+        letra = entrada.next().charAt(0);
+
+    }while(letra == 'S' || letra == 's');
     }
     public void Ejercicio1(){
         //Se les llama  metodos vacios porque no  poseen argumentos  y no son metodos 
@@ -138,7 +142,6 @@ class Ejercicios{
              conversion1 = metros * yardas;
              conversion2 = metros * millas;
              System.out.println("La cantidad en metros es: " + metros + "metros a yardas son: " + conversion1 + "de metros a millas son: " + conversion2);
-             
                 break;
         }
         
