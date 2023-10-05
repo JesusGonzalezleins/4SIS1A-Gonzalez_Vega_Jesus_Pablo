@@ -311,6 +311,14 @@ class EstructurasControl {
                        }
                     break;
                 case 11:
+                System.out.println("********");
+                System.out.println(" ********");
+                System.out.println("********");
+                System.out.println(" ********");
+                System.out.println("********");
+                System.out.println(" ********");
+                System.out.println("********");
+                System.out.println(" ********");
 
                     break;
                 case 12:
@@ -387,6 +395,7 @@ class EstructurasControl {
                     break;
                 case 14:
                     System.out.println("Gracias por usar este programa");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Elija una opcion valida");
