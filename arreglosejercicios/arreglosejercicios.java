@@ -11,6 +11,13 @@ public class arreglosejercicios {
         int cantidadNegativos = 0;
         int opcion;
         char letra;
+        int alumnosAprobados = 0;
+        int alumnosReprobados = 0;
+        int sumaCalificaciones = 0;
+        double promedio =0;
+        int calificacionesPorEncimaDelPromedio =0;
+     
+        
         
         do{
             System.out.println("Bienvenido al programa : ");
@@ -43,7 +50,9 @@ public class arreglosejercicios {
                         // Mostrar resultados
                         System.out.println("Promedio de valores positivos: " + promedioPositivos);
                         System.out.println("Promedio de valores negativos: " + promedioNegativos);
-              
+                        promedioPositivos=0;
+                        promedioNegativos=0;
+
                   
                     break;
                 case 2:
@@ -57,10 +66,50 @@ public class arreglosejercicios {
                         double promedioPares = (double) (numeros[0]+numeros[2]+numeros[4]+numeros[6]+numeros[8]) / 5 ;
                         // Mostrar resultado
                         System.out.println("Promedio de valores positivos: " + promedioPares);
+                        promedioPares=0;
                   
                      break;
                 case 3:
-                
+                      for (int i = 0; i < 10; i++) {
+                        System.out.println("Ingrese la calificacion del alumno " + (i + 1) + ": ");
+                        numeros[i] = entrada.nextInt();
+                        if (numeros[i] >= 6) {     
+                        alumnosAprobados++;
+                        } else if (numeros[i] <= 5) {
+                         alumnosReprobados++;
+                        }
+                        
+                        sumaCalificaciones += numeros[i];
+                        promedio = sumaCalificaciones * .10;
+                        {
+                            if (numeros[i] > promedio) {
+                                calificacionesPorEncimaDelPromedio++;
+                            }
+                        } 
+                        }
+                     
+                          System.out.println("la calificacion del alumno  " + numeros[0]);
+                          System.out.println("la calificacion del alumno  " + numeros[1]);
+                          System.out.println("la calificacion del alumno  " + numeros[2]);
+                          System.out.println("la calificacion del alumno  " + numeros[3]);
+                          System.out.println("la calificacion del alumno  " + numeros[4]);
+                          System.out.println("la calificacion del alumno  " + numeros[5]);
+                          System.out.println("la calificacion del alumno  " + numeros[6]);
+                          System.out.println("la calificacion del alumno  " + numeros[7]);
+                          System.out.println("la calificacion del alumno  " + numeros[8]);
+                          System.out.println("la calificacion del alumno  " + numeros[9]);
+                          System.out.println(" alumnos aprobados: " + alumnosAprobados);
+                          System.out.println(" alumnos reprobados: " + alumnosReprobados);
+                          System.out.println(" El promedio de los 10 alumnos es de : " + promedio);
+                          System.out.println(" cantidad de alumnos que superan el promedio " + calificacionesPorEncimaDelPromedio);
+                         alumnosAprobados = 0;
+                         alumnosReprobados = 0;
+                         calificacionesPorEncimaDelPromedio = 0;
+                         promedio =0;
+                         sumaCalificaciones=0;
+                        
+                         
+                         
                      break;
                 case 4:
 
