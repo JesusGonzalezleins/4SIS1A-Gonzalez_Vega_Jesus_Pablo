@@ -81,11 +81,11 @@ public class arreglosejercicios {
                         
                         sumaCalificaciones += numeros[i];
                         promedio = sumaCalificaciones * .10;
-                        {
-                            if (numeros[i] > promedio) {
+                        
+                         if (numeros[i] > promedio) {
                                 calificacionesPorEncimaDelPromedio++;
-                            }
-                        } 
+                         }
+                        
                         }
                      
                           System.out.println("la calificacion del alumno  " + numeros[0]);
