@@ -50,6 +50,8 @@ public class ahorcado {
               for (int i = 0; i < tamaño; i++){
                 respuesta[i]= '*';
             }
+            System.out.println("Alumno: Jesus Pablo Gonzalez Vega");
+            System.out.println("4ZLEINSCMA");
             System.out.println("Juego del ahorcado ");
             System.out.println("Reglas");
             System.out.println("Se te otorgaran 5 oportunidades");
