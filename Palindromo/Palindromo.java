@@ -8,18 +8,18 @@ public class Palindromo {
             System.out.println("Ingresa la palabra u oracion para ver si es palindromo");
         
             cadena = entrada.nextLine();
-        
+            String noSpace = cadena.replaceAll(" ", "");
             String invertida = "";
 
-            for(int i = cadena.length()-1; i>= 0; i--){
+            for(int i = noSpace.length()-1; i>= 0; i--){
             //obtener los caracteres de la cadena
-            char car  = cadena.charAt(i);
+            char car  = noSpace.charAt(i);
             //concatenar 
             invertida += car;
             }
 
             String salida  = "Cadenas a concatenar:"+ cadena + "\n"+ invertida + "\n";
-             if(cadena.equalsIgnoreCase(invertida)){
+             if(noSpace.equalsIgnoreCase(invertida)){
                 //si es verdad 
                 salida += "es palindromo la palabra u oracion \n";
                 System.out.println(salida);
